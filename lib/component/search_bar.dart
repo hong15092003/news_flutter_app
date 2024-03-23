@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_flutter_app/component/style.dart';
 
-dynamic searchAnchor() {
+dynamic searchBar() {
   return SearchBar(
     elevation: MaterialStateProperty.all<double>(0),
     backgroundColor: MaterialStateProperty.all<Color>(shadowColor),
@@ -15,5 +15,6 @@ dynamic searchAnchor() {
       ),
     ),
     leading: const Icon(Icons.search_rounded),
+    onSubmitted: (value) => print(value),
   );
 }

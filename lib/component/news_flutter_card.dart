@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:news_flutter_app/component/style.dart';
 import 'package:news_flutter_app/controller/get_news_api.dart';
-import 'package:news_flutter_app/pages/news_detail.dart';
+import 'package:news_flutter_app/views/news_detail.dart';
 
 Container newsFlutterCard(index, context) {
+  final article = getNewsContent.article;
   final scr = article[index];
   final publishedAt = DateTime.parse(scr.publishedAt!);
   final now = DateTime.now();

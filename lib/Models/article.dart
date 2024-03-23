@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class Article {
@@ -9,7 +10,7 @@ class Article {
   final String? publishedAt;
   final String? content;
   Article({
-    required this.source,
+    this.source,
     this.title,
     this.author,
     this.description,

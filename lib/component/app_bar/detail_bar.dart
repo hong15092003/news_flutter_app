@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/pages/home_page.dart';
+import 'package:news_flutter_app/views/home_page.dart';
 
 AppBar detailBar(context) {
   return AppBar(

@@ -1,29 +1,37 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:news_flutter_app/controller/filter_search.dart';
 import '../Models/article.dart';
 
-final List<Article> article = [];
-Future<String> getArticles() async {
-  const url =
-      'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c6f505c4c0c9495dacc2929ceb6468fa';
-  final response = await http.get(
-    Uri.parse(url),
-  );
-  //convert the response to Map
-  final body = jsonDecode(response.body) as Map<String, dynamic>;
-  article.clear();
-  for (final item in body['articles']) {
-    if (item['urlToImage'] == null ||
-        item['author'] == null ||
-        item['content'] == null ||
-        item['publishedAt'] == null ||
-        item['source'] == null ||
-        item['title'] == null ||
-        item['description'] == null) continue;
-    article.add(
-      Article.fromMap(item),
+
+
+class GetNewsContent extends FilterSearch{
+  final List<Article> article = [];
+  Future<void> getArticles() async {
+    final response = await http.get(
+      Uri.parse(filterSearch.url),
     );
+    //convert the response to Map
+    final body = jsonDecode(response.body) as Map<String, dynamic>;
+    mapArticles(body);
   }
-  return response.body;
+
+  void mapArticles(body) {
+    article.clear();
+    for (final item in body['articles']) {
+      if (item['urlToImage'] == null ||
+          item['author'] == null ||
+          item['content'] == null ||
+          item['publishedAt'] == null ||
+          item['source'] == null ||
+          item['title'] == null ||
+          item['description'] == null) continue;
+      article.add(
+        Article.fromMap(item),
+      );
+    }
+  }
 }
+
+GetNewsContent getNewsContent = GetNewsContent();
