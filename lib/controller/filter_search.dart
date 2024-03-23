@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:news_flutter_app/controller/get_news_api.dart';
 
 class FilterSearch extends ChangeNotifier {
   String headerAPI = 'https://newsapi.org/v2/top-headlines?';

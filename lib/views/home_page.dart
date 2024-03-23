@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_flutter_app/component/bottom_bar.dart';
 import 'package:news_flutter_app/component/app_bar/explore_bar.dart';
-import 'package:news_flutter_app/controller/filter_search.dart';
 import 'package:news_flutter_app/controller/get_news_api.dart';
 
 import '../component/news_flutter_card.dart';

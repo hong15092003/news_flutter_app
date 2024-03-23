@@ -3,7 +3,6 @@ import 'package:news_flutter_app/component/search_bar.dart';
 import 'package:news_flutter_app/component/style.dart';
 import 'package:intl/intl.dart';
 import 'package:news_flutter_app/controller/filter_search.dart';
-import 'package:news_flutter_app/controller/get_news_api.dart';
 
 // void (str) {
 //   getArticles(str);
