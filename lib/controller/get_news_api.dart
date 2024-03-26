@@ -2,11 +2,9 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:news_flutter_app/controller/filter_search.dart';
-import '../Models/article.dart';
+import '../models/article.dart';
 
-
-
-class GetNewsContent extends FilterSearch{
+class GetNewsContent extends FilterSearch {
   final List<Article> article = [];
   Future<void> getArticles() async {
     final response = await http.get(

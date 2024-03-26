@@ -29,19 +29,19 @@ Container exploreBar() {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                buttonAnchor('All', () => filterSearch.setCategory = 'general'),
-                buttonAnchor('Technology',
-                    () => filterSearch.setCategory = 'technology'),
+                buttonAnchor('All', () => filterSearch.setCategory('general')),
                 buttonAnchor(
-                    'Business', () => filterSearch.setCategory = 'business'),
+                    'Technology', () => filterSearch.setCategory('technology')),
                 buttonAnchor(
-                    'Health', () => filterSearch.setCategory = 'health'),
+                    'Business', () => filterSearch.setCategory('business')),
                 buttonAnchor(
-                    'Science', () => filterSearch.setCategory = 'science'),
+                    'Health', () => filterSearch.setCategory('health')),
                 buttonAnchor(
-                    'Sports', () => filterSearch.setCategory = 'sports'),
+                    'Science', () => filterSearch.setCategory('science')),
                 buttonAnchor(
-                    'Politics', () => filterSearch.setCategory = 'politics'),
+                    'Sports', () => filterSearch.setCategory('sports')),
+                buttonAnchor(
+                    'Politics', () => filterSearch.setCategory('politics')),
               ],
             ),
           )

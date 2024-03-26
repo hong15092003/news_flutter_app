@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/views/home_page.dart';
 
 bottomBar(context) {
   return Padding(
@@ -9,8 +8,8 @@ bottomBar(context) {
       children: [
         IconButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const HomePage()));
+            // Navigator.push(context,
+            //     MaterialPageRoute(builder: (context) => const HomePage()));
           },
           icon: const Icon(Icons.home),
         ),
