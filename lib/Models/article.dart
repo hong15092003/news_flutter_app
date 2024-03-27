@@ -44,3 +44,4 @@ class Article {
   DateTime get getPublishedAt => DateTime.parse(publishedAt!);
   String get getDateTime => DateFormat(dateFormat).format(getPublishedAt);
 }
+

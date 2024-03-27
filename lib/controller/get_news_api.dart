@@ -42,4 +42,6 @@ class GetNewsContent extends FilterSearch {
   }
 }
 
+
+
 GetNewsContent getNewsContent = GetNewsContent();
