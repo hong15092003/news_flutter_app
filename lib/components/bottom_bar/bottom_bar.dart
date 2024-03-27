@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/component/component_style.dart';
+import 'package:news_flutter_app/components/component_style.dart';
 
 const homeIcon = Icon(Icons.home);
 const searchIcon = Icon(Icons.search);

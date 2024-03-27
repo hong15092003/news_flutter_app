@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/component/app_bar/detail_bar.dart';
-import 'package:news_flutter_app/component/component_style.dart';
-import 'package:news_flutter_app/controller/get_news_api.dart';
+import 'package:news_flutter_app/components/app_bars/detail_bar.dart';
+import 'package:news_flutter_app/components/component_style.dart';
+import 'package:news_flutter_app/controllers/get_news_api.dart';
 
 class NewsDetail extends StatelessWidget {
   final int index;

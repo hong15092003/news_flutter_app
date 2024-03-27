@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/component/component_style.dart';
-import 'package:news_flutter_app/controller/filter_search.dart';
+import 'package:news_flutter_app/components/component_style.dart';
+import 'package:news_flutter_app/controllers/filter_search.dart';
 
 const searchIcon = Icon(Icons.search_rounded);
 

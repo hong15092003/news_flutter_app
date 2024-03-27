@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/component/bottom_bar/bottom_bar.dart';
-import 'package:news_flutter_app/component/app_bar/explore_bar.dart';
-import 'package:news_flutter_app/controller/filter_search.dart';
-import 'package:news_flutter_app/controller/get_news_api.dart';
+import 'package:news_flutter_app/components/bottom_bar/bottom_bar.dart';
+import 'package:news_flutter_app/components/app_bars/explore_bar.dart';
+import 'package:news_flutter_app/controllers/filter_search.dart';
+import 'package:news_flutter_app/controllers/get_news_api.dart';
 
-import '../component/body/news_flutter_card.dart';
+import '../components/body/news_flutter_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

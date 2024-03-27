@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:news_flutter_app/controller/filter_search.dart';
+import 'package:news_flutter_app/controllers/filter_search.dart';
 import '../models/article.dart';
 
 class GetNewsContent extends FilterSearch {

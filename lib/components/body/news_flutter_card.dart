@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/component/component_style.dart';
-import 'package:news_flutter_app/controller/get_news_api.dart';
+import 'package:news_flutter_app/components/component_style.dart';
+import 'package:news_flutter_app/controllers/get_news_api.dart';
 import 'package:news_flutter_app/views/news_detail.dart';
 
 

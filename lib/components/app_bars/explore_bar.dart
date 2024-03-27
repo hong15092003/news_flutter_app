@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/component/app_bar/search_bar.dart';
-import 'package:news_flutter_app/component/component_style.dart';
+import 'package:news_flutter_app/components/app_bars/search_bar.dart';
+import 'package:news_flutter_app/components/component_style.dart';
 import 'package:intl/intl.dart';
-import 'package:news_flutter_app/controller/filter_search.dart';
+import 'package:news_flutter_app/controllers/filter_search.dart';
 
 List<String> categories = [
   'All',
@@ -17,8 +17,7 @@ List<String> categories = [
 List<Widget> categoryButtons() {
   return categories.map((category) {
     return buttonAnchor(
-            category, () => filterSearch.setCategory(category.toLowerCase()))
-        as Widget;
+            category, () => filterSearch.setCategory(category.toLowerCase()));
   }).toList();
 }
 
