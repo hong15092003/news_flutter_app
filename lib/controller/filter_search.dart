@@ -1,27 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+const headerHeadlines = 'https://newsapi.org/v2/top-headlines?';
+const headerEverything = 'https://newsapi.org/v2/everything?';
+const apiKey = 'c6f505c4c0c9495dacc2929ceb6468fa';
+
 class FilterSearch extends ChangeNotifier {
-  String header = 'https://newsapi.org/v2/top-headlines?';
-  String headerHeadlines = 'https://newsapi.org/v2/top-headlines?';
-  String headerEverything = 'https://newsapi.org/v2/everything?';
-
-  String apiKey = 'c6f505c4c0c9495dacc2929ceb6468fa';
+  String? _url;
   String category = 'general';
-  String search = '';
-  String dateTimeNow = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
-  String get url => '${header}country=us&category=$category&apiKey=$apiKey';
+  DateTime get yesterday => DateTime.now().subtract(const Duration(days: 1));
+  String get yesterdayFormat => DateFormat('yyyy-MM-dd').format(yesterday);
 
-  set setSearch(value) {
-    search = value;
-    header = headerEverything;
+  String generateEverythingUrl(String value) {
+    return '${headerEverything}q=$value&from=$yesterdayFormat&sortBy=publishedAt&apiKey=$apiKey';
+  }
+
+  String generateHeadlinesUrl() {
+    return '${headerHeadlines}country=us&category=$category&apiKey=$apiKey';
+  }
+
+  set url(String? value) {
+    _url =
+        value != null ? generateEverythingUrl(value) : generateHeadlinesUrl();
+  }
+
+  String get url => _url!;
+
+  void setSearch(String? value) {
+    url = value?.isEmpty ?? true ? null : value;
     notifyListeners();
   }
 
   void setCategory(String value) {
     category = value;
-    header = headerHeadlines;
+    url = null;
     notifyListeners();
   }
 }

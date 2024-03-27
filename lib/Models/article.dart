@@ -1,5 +1,7 @@
 import 'package:intl/intl.dart';
 
+const dateFormat = 'EEEE, dd MMMM  yyyy';
+
 class Article {
   final dynamic source;
   final String? title;
@@ -8,6 +10,7 @@ class Article {
   final String? urlToImage;
   final String? publishedAt;
   final String? content;
+
   Article({
     this.source,
     this.title,
@@ -29,12 +32,15 @@ class Article {
       content: map['content'],
     );
   }
-  List<String> get splitStr => title!.split('|');
-  dynamic get getName => '${source['name']}';
-  String get getTitle => splitStr[0];
 
+  List<String> splitTitle() {
+    return title!.split('|');
+  }
+
+  String get getAuthor => author ?? 'Unknown';
+  String get getName => '${source['name']}';
+  String get getTitle => splitTitle()[0];
+  String get getUrlToImage => urlToImage ?? '';
   DateTime get getPublishedAt => DateTime.parse(publishedAt!);
-
-  String get getDateTime =>
-      DateFormat('EEEE, dd MMMM  yyyy').format(getPublishedAt);
+  String get getDateTime => DateFormat(dateFormat).format(getPublishedAt);
 }

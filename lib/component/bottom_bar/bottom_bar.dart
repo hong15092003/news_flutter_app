@@ -1,30 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:news_flutter_app/component/component_style.dart';
 
-bottomBar(context) {
+const homeIcon = Icon(Icons.home);
+const searchIcon = Icon(Icons.search);
+const bookmarkIcon = Icon(Icons.bookmark);
+const personIcon = Icon(Icons.person);
+
+Padding bottomBar(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(top: 5, bottom: 25),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        IconButton(
-          onPressed: () {
-            // Navigator.push(context,
-            //     MaterialPageRoute(builder: (context) => const HomePage()));
-          },
-          icon: const Icon(Icons.home),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.search),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.bookmark),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.person),
-        ),
+        button(homeIcon, () {}),
+        button(searchIcon, () {}),
+        button(bookmarkIcon, () {}),
+        button(personIcon, () {}),
       ],
     ),
   );

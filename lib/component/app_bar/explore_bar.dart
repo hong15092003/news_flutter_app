@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter_app/component/search_bar.dart';
-import 'package:news_flutter_app/component/style.dart';
+import 'package:news_flutter_app/component/app_bar/search_bar.dart';
+import 'package:news_flutter_app/component/component_style.dart';
 import 'package:intl/intl.dart';
 import 'package:news_flutter_app/controller/filter_search.dart';
 
-// void (str) {
-//   getArticles(str);
-// }
+List<String> categories = [
+  'All',
+  'Technology',
+  'Business',
+  'Health',
+  'Science',
+  'Sports',
+  'Politics',
+];
+
+List<Widget> categoryButtons() {
+  return categories.map((category) {
+    return buttonAnchor(
+            category, () => filterSearch.setCategory(category.toLowerCase()))
+        as Widget;
+  }).toList();
+}
 
 String formattedDate = DateFormat('EEEE, dd MMMM  yyyy').format(DateTime.now());
 
@@ -28,21 +42,7 @@ Container exploreBar() {
           Expanded(
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: [
-                buttonAnchor('All', () => filterSearch.setCategory('general')),
-                buttonAnchor(
-                    'Technology', () => filterSearch.setCategory('technology')),
-                buttonAnchor(
-                    'Business', () => filterSearch.setCategory('business')),
-                buttonAnchor(
-                    'Health', () => filterSearch.setCategory('health')),
-                buttonAnchor(
-                    'Science', () => filterSearch.setCategory('science')),
-                buttonAnchor(
-                    'Sports', () => filterSearch.setCategory('sports')),
-                buttonAnchor(
-                    'Politics', () => filterSearch.setCategory('politics')),
-              ],
+              children: categoryButtons(),
             ),
           )
         ],

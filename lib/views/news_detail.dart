@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_flutter_app/component/app_bar/detail_bar.dart';
-import 'package:news_flutter_app/component/style.dart';
+import 'package:news_flutter_app/component/component_style.dart';
 import 'package:news_flutter_app/controller/get_news_api.dart';
 
 class NewsDetail extends StatelessWidget {
@@ -11,6 +11,26 @@ class NewsDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final article = getNewsContent.article;
     dynamic scr = article[index];
+
+    Image newsImage() {
+      return Image.network(
+        scr.getUrlToImage,
+        fit: BoxFit.cover,
+        width: double.infinity,
+        height: 200,
+      );
+    }
+
+    Column authorAndDate() {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          textDateTime(scr.getDateTime),
+          textAuthor('By ${scr.getAuthor}'),
+        ],
+      );
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -22,27 +42,16 @@ class NewsDetail extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  scr.urlToImage,
-                  fit: BoxFit.cover,
-                  width: double.infinity,
-                  height: 200,
-                ),
+                child: newsImage(),
               ),
               sizeH10,
               textAuthor('#${scr.getName}'),
               sizeH10,
               textTitle(scr.getTitle),
               sizeH10,
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  textDateTime(scr.getDateTime),
-                  textAuthor('By ${scr.author}'),
-                ],
-              ),
+              authorAndDate(),
               sizeH10,
-              textContent(scr.content),
+              textContent(context,scr.content),
             ],
           ),
         ),

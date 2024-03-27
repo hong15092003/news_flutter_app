@@ -82,7 +82,7 @@ Text textDateTime(text) {
   );
 }
 
-Text textContent(text) {
+Text textContent(contetx, text) {
   return Text(
     text,
     style: contentTextStyle,
@@ -104,7 +104,15 @@ final boxDecorationCard = BoxDecoration(
   ],
 );
 
-buttonAnchor(text, onPressed) {
+
+IconButton button (icon, onPressed) {
+  return IconButton(
+    onPressed: onPressed,
+    icon: icon,
+  );
+}
+
+Container buttonAnchor(text, onPressed) {
   return Container(
     margin: const EdgeInsets.only(right: 5, top: 10, bottom: 10, left: 5),
     child: TextButton(
